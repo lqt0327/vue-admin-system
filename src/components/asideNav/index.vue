@@ -35,9 +35,9 @@
       <i class="el-icon-document"></i>
       <template #title>导航三</template>
     </el-menu-item>
-    <el-menu-item index="4">
-      <i class="el-icon-setting"></i>
-      <template #title>导航四</template>
+    <el-menu-item index="4" @click="goPage('imgRelease')">
+      <i class="el-icon-picture"></i>
+      <template #title>图片发布</template>
     </el-menu-item>
     <el-submenu index="5">
       <template #title>
@@ -58,7 +58,11 @@
 
 <script>
 export default {
-    
+    methods: {
+      goPage(url) {
+        this.$router.push(url)
+      }
+    }
 }
 </script>
 

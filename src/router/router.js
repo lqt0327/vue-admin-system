@@ -31,9 +31,9 @@ const router = createRouter({
             component: () => import('pages/home')
         },
         {
-            path: '/test',
-            name: 'test',
-            component: () => import('pages/test')
+            path: '/imgRelease',
+            name: 'imgRelease',
+            component: () => import('pages/imgRelease')
         }
         
     ]
