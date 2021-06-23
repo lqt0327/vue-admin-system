@@ -5,6 +5,9 @@
     action="https://two.luoqintai.cn/upload"
     :before-upload="beforeUpload"
     multiple
+    :on-success="success"
+    list-type="picture"
+    :on-preview="preview"
   >
     <i class="el-icon-upload"></i>
     <div class="el-upload__text">将文件拖到此处，或<em>点击上传</em></div>
@@ -18,6 +21,7 @@
 
 <script>
 import { ElMessage } from 'element-plus'
+import { copyHandle } from '@/utils/tools'
 export default {
   components: {
   },
@@ -30,7 +34,13 @@ export default {
         ElMessage('图片大小不能超过500kb')
         return false
       }
-    }
+    },
+    // success(args) {
+    //   console.log(args,'????')
+    // },
+    preview(args) {
+      copyHandle(args.response.url)
+    },
   }
 };
 </script>
